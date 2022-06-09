@@ -8,17 +8,10 @@ namespace R5T.E0048
 {
     public static partial class IServiceActionExtensions
     {
-
-                public static IServiceAction<HostStartup> AddHostStartupAction(this IServiceAction _)
-
-                {
-        
-
-                    var output = _.New<HostStartup>(services => services.AddHostStartup());
-        
-
-                    return output;
-
-                }
+        public static IServiceAction<HostStartup> AddHostStartupAction(this IServiceAction _)
+        {
+            var output = _.New<HostStartup>(services => services.AddHostStartup());
+            return output;
+        }
     }
 }

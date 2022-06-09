@@ -10,23 +10,15 @@ namespace R5T.E0048
 {
     public static partial class IServiceCollectionExtensions
     {
-
-                public static IServiceCollection AddHostStartup(this IServiceCollection services)
-
-                {
+        public static IServiceCollection AddHostStartup(this IServiceCollection services)
+        {
+            var dependencyServiceActions = new DependencyServiceActionAggregation();
         
-
-                    var dependencyServiceActions = new DependencyServiceActionAggregation();
-        
-
-                    services.AddHostStartup<HostStartup>(dependencyServiceActions)
+            services.AddHostStartup<HostStartup>(dependencyServiceActions)
                 // Add services required by HostStartup, but not by HostStartupBase.
+                ;
 
-                        ;
-        
-
-                    return services;
-
-                }
+            return services;
+        }
     }
 }
